@@ -22,7 +22,7 @@
 import { reactive } from "vue";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
-import HelloWorld from "@/components/HelloWorld.vue";
+// import HelloWorld from "@/components/HelloWorld.vue";
 import { apiUserInfo } from "../api/user";
 export default {
   name: "App",
