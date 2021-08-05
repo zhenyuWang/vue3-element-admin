@@ -2,7 +2,7 @@ import axios from "axios";
 import { Message } from "element3";
 // 创建axios实例
 const service = axios.create({
-  baseURL: import.meta.env.VITE_BASE_API,
+  baseURL: window.baseUrl,
   timeout: 10000,
 });
 // 请求拦截器
