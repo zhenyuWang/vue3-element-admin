@@ -4,17 +4,16 @@ module.exports = {
     "^.+\\.vue$": "vue-jest",
     "^.+\\.tsx?$": "ts-jest",
   },
+  testMatch: ["**/?(*.)+(test).[jt]s?(x)"],
   moduleNameMapper: {
     "^@/(.*)$": "<rootDir>/src/$1",
   },
   collectCoverage: true,
   collectCoverageFrom: [
     "src/**/*.{js,ts,vue}",
-    "tests/**/*.{js,ts}",
     "!**/node_modules/**",
     "!**/shims-vue.d.ts",
     "!**/vite-env.d.ts",
     "!**/main.ts",
-    "!src/utils/request.ts",
   ],
 };

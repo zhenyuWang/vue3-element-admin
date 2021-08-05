@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>这里是登录页面</h3>
+    <h3>login</h3>
     <el-button type="primary" @click="login">登录</el-button>
   </div>
 </template>

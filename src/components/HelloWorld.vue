@@ -6,7 +6,7 @@
     </li>
   </ul>
   <p>{{ count }}</p>
-  <button type="button" @click="count++">add count</button>
+  <button class="plus" type="button" @click="count++">add count</button>
 </template>
 
 <script lang="ts">
