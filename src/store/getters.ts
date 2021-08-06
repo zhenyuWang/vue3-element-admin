@@ -1,13 +1,18 @@
 type userInfo = {
   name: string;
-  age: number;
   roles: Array<string>;
 };
-type user = {
+type state = {
   user: {
     userInfo: userInfo;
   };
+  permission: {
+    routes: any[];
+    permissionRoutes: any[];
+  };
 };
 export default {
-  userInfo: (state: user) => state.user.userInfo,
+  userInfo: (state: state) => state.user.userInfo,
+  routes: (state: state) => state.permission.routes,
+  permissionRoutes: (state: state) => state.permission.permissionRoutes,
 };

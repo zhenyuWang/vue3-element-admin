@@ -1,6 +1,6 @@
 describe("first", () => {
   it("one", () => {
     cy.visit("http://localhost:3000/");
-    cy.get("button.plus").click();
+    cy.get("button").click();
   });
 });

@@ -1,5 +1,5 @@
-import { apiUserInfo } from "../user";
-test("apiUserInfo", () => {
-  expect(apiUserInfo).not.toBeNull();
-  expect(apiUserInfo).not.toBeUndefined();
+import { apiLogin } from "../user";
+test("apiLogin", () => {
+  expect(apiLogin).not.toBeNull();
+  expect(apiLogin).not.toBeUndefined();
 });

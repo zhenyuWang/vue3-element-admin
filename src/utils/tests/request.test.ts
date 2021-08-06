@@ -1,5 +1,5 @@
 import request from "../request";
-test("apiUserInfo", () => {
+test("request", () => {
   expect(request).not.toBeNull();
   expect(request).not.toBeUndefined();
 });

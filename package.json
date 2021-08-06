@@ -1,5 +1,5 @@
 {
-  "name": "my-vue-app",
+  "name": "vue3-element3-admin",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -10,8 +10,8 @@
     "lint:fix": "eslint --ext .js,ts,vue src/** --no-error-on-unmatched-pattern --fix",
     "test-unit": "jest",
     "test-e2e": "cypress open",
-    "test-e2e-ci": "cypress run",
-    "test": "yarn test-unit && yarn test-e2e-ci"
+    "test-e2e-ci":"cypress run",
+    "test":"yarn test-unit && yarn test-e2e-ci"
   },
   "gitHooks": {
     "pre-commit": "lint-staged",
@@ -55,7 +55,6 @@
     "typescript": "^4.3.5",
     "vite": "^2.4.4",
     "vue-jest": "^5.0.0-alpha.10",
-    "vue-tsc": "^0.2.2",
-    "yorkie": "^2.0.0"
+    "vue-tsc": "^0.2.2"
   }
 }

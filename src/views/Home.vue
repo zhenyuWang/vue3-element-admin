@@ -1,9 +1,8 @@
 <template>
-  <div id="box">
+  <div class="box">
     <div class="logo" />
-    <HelloWorld msg="Vite + Vue3 + TS + SCSS + UnitTest buy wzy!" />
+    <HelloWorld msg="Vite + Vue3 + TS + SCSS + jest+e2e buy wzy!" />
     <p>用户名：{{ userInfo.name }}</p>
-    <p>年龄：{{ userInfo.age }}</p>
     <p>
       角色：
       <span v-for="(item, index) in userInfo.roles" :key="item"
@@ -11,10 +10,12 @@
       >
     </p>
     <el-button>默认按钮</el-button>
-    <el-button type="primary"> 主要按钮 </el-button>
+    <el-button type="primary" @click="goLogin"> 登录 </el-button>
     <el-button type="success"> 成功按钮 </el-button>
-    <i class="el-icon-edit" />
-    <el-link type="primary" @click="goLogin"> 主要链接 </el-link>
+    <p>
+      <i class="el-icon-edit" />
+      <el-link type="primary"> 主要链接 </el-link>
+    </p>
   </div>
 </template>
 
@@ -23,7 +24,6 @@ import { reactive } from "vue";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
 import HelloWorld from "@/components/HelloWorld.vue";
-import { apiUserInfo } from "../api/user";
 export default {
   name: "App",
   components: {
@@ -33,12 +33,10 @@ export default {
     const store = useStore();
     const userInfo = reactive(store.getters.userInfo);
     console.log("userInfo", userInfo);
+    console.log("routes", store.getters.routes);
+    console.log("permissionRoutes", store.getters.permissionRoutes);
     const router = useRouter();
     const goLogin = () => {
-      apiUserInfo({}).then((res) => {
-        console.log(res);
-      });
-      console.log("this", this, "store");
       router.push({ name: "Login" });
     };
     return { userInfo, goLogin };
@@ -47,7 +45,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#box {
+.box {
+  padding-top: 1px;
   text-align: center;
   color: green;
   .logo {

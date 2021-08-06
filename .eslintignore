@@ -3,3 +3,5 @@ dist
 src/assets
 src/styles
 script
+package.json
+index.html

@@ -1,5 +1,5 @@
 import store from "../index";
-test("apiUserInfo", () => {
+test("store", () => {
   expect(store).not.toBeNull();
   expect(store).not.toBeUndefined();
 });
