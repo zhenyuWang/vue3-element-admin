@@ -1,7 +1,13 @@
 <template>
   <div>
     <el-table :data="list.data" highlight-current-row border stripe>
-      <el-table-column label="序号" align="center" width="80" type="index">
+      <el-table-column
+        label="序号"
+        align="center"
+        width="80"
+        type="index"
+        :index="getIndex"
+      >
       </el-table-column>
       <el-table-column label="姓名" align="center" width="100" prop="name" />
       <el-table-column label="角色" align="center" width="100" prop="role" />
@@ -33,6 +39,7 @@ import {
   onDeactivated,
 } from "vue";
 import { apiList2 } from "@/api/table.ts";
+import { ElLoading } from "element3";
 export default defineComponent({
   name: "TableChildList2",
   components: {},
@@ -47,17 +54,26 @@ export default defineComponent({
     const totalCount = ref(0);
     const getList = (index?: number) => {
       if (index) param.pageNo = index;
+      const loading = ElLoading.service({
+        fullscreen: false,
+        target: ".el-table__body-wrapper",
+        text: "Loading...",
+        spinner: "el-icon-loading",
+      });
       apiList2(param).then((res) => {
         list.data = res.body.data;
         totalCount.value = res.body.totalCount;
+        loading.close();
       });
     };
-    getList();
     const handleDelete = (item: any) => {
       console.log(`del ${item.id}`);
     };
-
+    const getIndex = (index: number) => {
+      return (param.pageNo - 1) * param.pageSize + index + 1;
+    };
     onMounted(() => {
+      getList();
       console.log("List2 onMounted");
     });
     onActivated(() => {
@@ -70,6 +86,7 @@ export default defineComponent({
       list,
       param,
       getList,
+      getIndex,
       totalCount,
       handleDelete,
     };

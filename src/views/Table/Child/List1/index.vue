@@ -30,6 +30,7 @@ import {
 } from "vue";
 import { useRouter } from "vue-router";
 import { apiList1 } from "@/api/table.ts";
+import { ElLoading } from "element3";
 export default defineComponent({
   name: "TableChildList1",
   components: {},
@@ -41,17 +42,18 @@ export default defineComponent({
       pageNo: 1,
       pageSize: 10,
     });
-    const listLoading = ref(true);
     const getList = () => {
-      listLoading.value = true;
+      const loading = ElLoading.service({
+        fullscreen: false,
+        target: ".el-table__body-wrapper",
+        text: "Loading...",
+        spinner: "el-icon-loading",
+      });
       apiList1(param).then((res) => {
-        setTimeout(() => {
-          listLoading.value = false;
-        }, 2000);
         list.data = res.body.data;
+        loading.close();
       });
     };
-    getList();
     const router = useRouter();
     const handleEdit = (item: any) => {
       console.log(`edit ${item.id}`);
@@ -63,6 +65,7 @@ export default defineComponent({
 
     onMounted(() => {
       console.log("List1 onMounted");
+      getList();
     });
     onActivated(() => {
       console.log("List1 onActivated");
@@ -73,7 +76,6 @@ export default defineComponent({
     return {
       list,
       param,
-      listLoading,
       handleEdit,
       handleDelete,
     };
