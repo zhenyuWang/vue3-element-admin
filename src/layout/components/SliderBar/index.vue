@@ -66,10 +66,7 @@ export default defineComponent({
           color: #fff;
         }
         &:hover {
-          &,
-          i {
-            color: #3477f2;
-          }
+          background-color: #2c67d3;
         }
       }
     }

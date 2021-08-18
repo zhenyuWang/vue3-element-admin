@@ -23,6 +23,8 @@ import {
   ElTable,
   ElTableColumn,
   ElPagination,
+  ElBreadcrumb,
+  ElBreadcrumbItem,
 } from "element3";
 
 createApp(App)
@@ -45,4 +47,6 @@ createApp(App)
   .use(ElTable)
   .use(ElTableColumn)
   .use(ElPagination)
+  .use(ElBreadcrumb)
+  .use(ElBreadcrumbItem)
   .mount("#app");

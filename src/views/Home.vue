@@ -35,7 +35,6 @@ export default defineComponent({
     const store = useStore();
     const userInfo = reactive(store.getters.userInfo);
     const router = useRouter();
-    console.log("avatar", avatar);
     const goLogin = () => {
       router.push({ name: "Login" });
     };

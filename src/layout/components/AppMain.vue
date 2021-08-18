@@ -3,12 +3,12 @@
     <SliderBar />
     <el-container>
       <el-header>
-        <Header />
+        <NavBar />
       </el-header>
       <el-main>
         <router-view v-slot="{ Component }">
           <template v-if="Component">
-            <transition mode="out-in">
+            <transition name="fade-transform" mode="out-in">
               <keep-alive :include="cachedViews">
                 <component :is="Component" :key="key" />
               </keep-alive>
@@ -24,9 +24,9 @@ import { defineComponent, ref, watchEffect } from "vue";
 import { useStore } from "vuex";
 import { useRoute } from "vue-router";
 import SliderBar from "./SliderBar/index.vue";
-import Header from "./Header/index.vue";
+import NavBar from "./NavBar/index.vue";
 export default defineComponent({
-  components: { SliderBar, Header },
+  components: { SliderBar, NavBar },
   setup() {
     const store = useStore();
     const cachedViews = store.getters.cachedViews;
@@ -43,5 +43,12 @@ export default defineComponent({
 <style lang="scss" scoped>
 .app_main {
   height: 100%;
+}
+/* fade-transform */
+.fade-transform-leave-active,
+.fade-transform-enter-active {
+  transition: all 0.2s;
+  opacity: 0;
+  transform: translateX(30px);
 }
 </style>

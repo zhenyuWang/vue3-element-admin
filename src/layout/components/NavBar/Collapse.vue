@@ -1,10 +1,7 @@
 <template>
-  <div class="flex">
-    <div class="collapse_box" @click="changeCollapse">
-      <span v-if="isCollapse" class="el-icon-s-unfold"></span>
-      <span v-else class="el-icon-s-fold"></span>
-    </div>
-    <div>header</div>
+  <div class="collapse_box pr_20 pointer" @click="changeCollapse">
+    <span v-if="isCollapse" class="fontsize_20 el-icon-s-unfold"></span>
+    <span v-else class="fontsize_20 el-icon-s-fold"></span>
   </div>
 </template>
 <script>
