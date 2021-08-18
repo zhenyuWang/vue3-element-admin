@@ -1,7 +1,7 @@
-import "@/styles/index.scss";
 import { createApp } from "vue";
 import App from "@/App.vue";
-import store from "./store";
+import "@/styles/index.scss";
+import store from "@/utils/cacheStore";
 import router from "./router/index";
 // Element3相关
 import "element3/lib/theme-chalk/index.css";
@@ -12,11 +12,19 @@ import {
   ElForm,
   ElFormItem,
   ElInput,
+  ElMenu,
+  ElSubmenu,
+  ElMenuItem,
+  ElMenuItemGroup,
+  ElAside,
+  ElContainer,
+  ElHeader,
+  ElMain,
+  ElTable,
+  ElTableColumn,
+  ElPagination,
 } from "element3";
 
-// vite环境变量直接使用jest测试报错，所以绑定到window上
-window.baseUrl = import.meta.env.VITE_BASE_API;
-window.mode = import.meta.env.MODE;
 createApp(App)
   .use(store)
   .use(router)
@@ -26,4 +34,15 @@ createApp(App)
   .use(ElForm)
   .use(ElFormItem)
   .use(ElInput)
+  .use(ElMenu)
+  .use(ElSubmenu)
+  .use(ElMenuItem)
+  .use(ElMenuItemGroup)
+  .use(ElAside)
+  .use(ElContainer)
+  .use(ElHeader)
+  .use(ElMain)
+  .use(ElTable)
+  .use(ElTableColumn)
+  .use(ElPagination)
   .mount("#app");

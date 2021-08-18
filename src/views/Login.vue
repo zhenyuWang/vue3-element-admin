@@ -14,6 +14,7 @@
             v-model="param.password"
             placeholder="密码"
             show-password
+            autocomplete
           ></el-input>
         </el-form-item>
         <el-button class="w_100" type="primary" @click="submit()"
@@ -24,12 +25,11 @@
   </div>
 </template>
 <script>
-import { ref, reactive, toRefs } from "vue";
+import { defineComponent, ref, reactive, toRefs } from "vue";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
-export default {
-  name: "",
-  components: {},
+export default defineComponent({
+  name: "Login",
   setup() {
     // sotre实例
     const store = useStore();
@@ -79,7 +79,7 @@ export default {
       submit,
     };
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 .login_main {

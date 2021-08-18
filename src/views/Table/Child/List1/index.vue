@@ -1,0 +1,82 @@
+<template>
+  <div>
+    <el-table :data="list.data" highlight-current-row border stripe>
+      <el-table-column label="序号" align="center" width="80" type="index">
+      </el-table-column>
+      <el-table-column label="姓名" align="center" width="100" prop="name" />
+      <el-table-column label="角色" align="center" width="100" prop="role" />
+      <el-table-column label="操作" align="center">
+        <template #default="scope">
+          <el-button size="mini" type="primary" @click="handleEdit(scope.row)"
+            >编辑</el-button
+          >
+          <el-button size="mini" type="danger" @click="handleDelete(scope.row)"
+            >删除</el-button
+          >
+        </template>
+      </el-table-column>
+    </el-table>
+  </div>
+</template>
+
+<script lang="ts">
+import {
+  defineComponent,
+  reactive,
+  ref,
+  onMounted,
+  onActivated,
+  onDeactivated,
+} from "vue";
+import { useRouter } from "vue-router";
+import { apiList1 } from "@/api/table.ts";
+export default defineComponent({
+  name: "TableChildList1",
+  components: {},
+  setup() {
+    const list = reactive({
+      data: [],
+    });
+    const param = reactive({
+      pageNo: 1,
+      pageSize: 10,
+    });
+    const listLoading = ref(true);
+    const getList = () => {
+      listLoading.value = true;
+      apiList1(param).then((res) => {
+        setTimeout(() => {
+          listLoading.value = false;
+        }, 2000);
+        list.data = res.body.data;
+      });
+    };
+    getList();
+    const router = useRouter();
+    const handleEdit = (item: any) => {
+      console.log(`edit ${item.id}`);
+      router.push(`/table/child/list1/edit/${item.id}`);
+    };
+    const handleDelete = (item: any) => {
+      console.log(`del ${item.id}`);
+    };
+
+    onMounted(() => {
+      console.log("List1 onMounted");
+    });
+    onActivated(() => {
+      console.log("List1 onActivated");
+    });
+    onDeactivated(() => {
+      console.log("List1 onDeactivated");
+    });
+    return {
+      list,
+      param,
+      listLoading,
+      handleEdit,
+      handleDelete,
+    };
+  },
+});
+</script>

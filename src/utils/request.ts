@@ -1,8 +1,9 @@
 import axios from "axios";
 import { Message } from "element3";
 // 创建axios实例
+// vite环境变量直接使用jest测试报错，所以绑定到window上
 const service = axios.create({
-  baseURL: window.baseUrl,
+  baseURL: process.env.VITE_BASE_API,
   timeout: 10000,
 });
 // 请求拦截器
@@ -11,7 +12,6 @@ service.interceptors.request.use(
     return config;
   },
   (error) => {
-    console.log(error);
     return Promise.reject(error);
   }
 );
@@ -26,7 +26,6 @@ service.interceptors.response.use(
     return res;
   },
   (error) => {
-    console.log("err" + error); // for debug
     Message.error("错了哦，这是一条错误消息");
     return Promise.reject(error);
   }
@@ -65,22 +64,12 @@ type Method =
 const request = (
   url: string,
   method: Method,
-  trModuleCode: string,
-  trCode: string,
-  body: Record<string, unknown>
+  data: Record<string, unknown>
 ) => {
-  // const request = (url, method, trModuleCode, trCode, body) => {
   return service({
     url,
     method,
-    headers: {},
-    data: {
-      header: {
-        trModuleCode,
-        trCode,
-      },
-      body,
-    },
+    data,
   });
 };
 export default request;

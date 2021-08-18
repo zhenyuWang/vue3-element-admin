@@ -5,12 +5,13 @@ import store from "@/store";
 import Layout from "@/layout/index.vue";
 
 import table from "./modules/table";
+import nestRoute from "./modules/nestRoute";
 // 无需权限的路由
 export const routes = [
   {
     path: "/login",
     name: "Login",
-    fullPath: "/login",
+    hidden: true,
     meta: { notNeedAuth: true },
     component: () => import("@/views/Login.vue"),
   },
@@ -19,6 +20,7 @@ export const routes = [
     path: "/404",
     name: "404",
     hidden: true,
+    meta: { notNeedAuth: true },
     component: () => import("@/views/404.vue"),
   },
 ];
@@ -27,19 +29,21 @@ export const permissionRoutes = [
   {
     path: "/",
     fullPath: "/",
+    name: "Root",
     component: Layout,
     redirect: "/home",
-    name: "Root",
     children: [
       {
         path: "home",
         fullPath: "/home",
         name: "Home",
+        meta: { title: "首页", icon: "el-icon-s-home", needCache: true },
         component: () => import("@/views/Home.vue"),
       },
-      table,
     ],
   },
+  table,
+  nestRoute,
   {
     path: "/:catchAll(.*)",
     hidden: true,
@@ -79,7 +83,10 @@ router.beforeEach((to) => {
   }
 });
 // 这里可以收集用户路由历史信息
-// router.afterEach((to: any) => {
-// });
+router.afterEach((to: any) => {
+  if (to.name && to.meta.needCache) {
+    store.commit("tagsView/ADD_VIEW", to.name);
+  }
+});
 
 export default router;

@@ -1,6 +1,8 @@
 <template>
   <div class="box">
-    <div class="logo" />
+    <div class="avatar_box flex flex_center">
+      <img :src="avatar" alt="" />
+    </div>
     <HelloWorld msg="Vite + Vue3 + TS + SCSS + jest+e2e buy wzy!" />
     <p>用户名：{{ userInfo.name }}</p>
     <p>
@@ -18,44 +20,47 @@
     </p>
   </div>
 </template>
-
 <script lang="ts">
-import { reactive } from "vue";
+import { defineComponent, reactive, onMounted } from "vue";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
 import HelloWorld from "@/components/HelloWorld.vue";
-export default {
-  name: "App",
+import avatar from "@/assets/img/avatar.jpg";
+export default defineComponent({
+  name: "Home",
   components: {
     HelloWorld,
   },
   setup() {
     const store = useStore();
     const userInfo = reactive(store.getters.userInfo);
-    console.log("userInfo", userInfo);
-    console.log("routes", store.getters.routes);
-    console.log("permissionRoutes", store.getters.permissionRoutes);
     const router = useRouter();
+    console.log("avatar", avatar);
     const goLogin = () => {
       router.push({ name: "Login" });
     };
-    return { userInfo, goLogin };
+    onMounted(() => {
+      console.log("home onMounted");
+    });
+    return { avatar, userInfo, goLogin };
   },
-};
+});
 </script>
-
 <style lang="scss" scoped>
 .box {
   padding-top: 1px;
   text-align: center;
   color: green;
-  .logo {
+  .avatar_box {
     width: 200px;
     height: 200px;
     margin: 20px auto;
-    background-image: url("@/assets/avatar.jpg");
     background-size: 100% 100%;
     background-color: #09c;
+    > img {
+      width: 100px;
+      height: auto;
+    }
   }
 }
 </style>

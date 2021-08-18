@@ -14,6 +14,5 @@ module.exports = {
     "!**/node_modules/**",
     "!**/shims-vue.d.ts",
     "!**/vite-env.d.ts",
-    "!**/main.ts",
   ],
 };

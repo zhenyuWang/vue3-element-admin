@@ -33,13 +33,14 @@ export default {
   actions: {
     login(context: context, data: loginData) {
       return new Promise((resolve) => {
-        apiLogin(data).then((res) => {
-          const ret = res.body;
+        apiLogin(data).then(async (res) => {
           context.commit("setUserInfo", {
-            name: ret.name,
-            roles: ret.roles,
+            name: res.body.name,
+            roles: res.body.roles,
           });
-          context.dispatch("permission/handleRoutes", null, { root: true });
+          await context.dispatch("permission/handleRoutes", null, {
+            root: true,
+          });
           resolve("success");
         });
       });

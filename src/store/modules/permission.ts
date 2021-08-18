@@ -1,6 +1,4 @@
 import router, { routes, permissionRoutes } from "@/router";
-console.log("routes", routes);
-console.log("permissionRoutes", permissionRoutes);
 type routes = any[];
 type state = {
   routes: routes;
