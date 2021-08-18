@@ -23,7 +23,6 @@
 import {
   defineComponent,
   reactive,
-  ref,
   onMounted,
   onActivated,
   onDeactivated,
