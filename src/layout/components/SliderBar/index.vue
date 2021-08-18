@@ -39,7 +39,7 @@ export default defineComponent({
   width: 230px !important;
   background-color: #3477f2;
   overflow-x: hidden;
-  transition: 0.5s;
+  transition: 0.4s;
   &.collapse {
     width: 64px !important;
   }
