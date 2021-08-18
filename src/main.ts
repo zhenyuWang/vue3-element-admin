@@ -25,6 +25,10 @@ import {
   ElPagination,
   ElBreadcrumb,
   ElBreadcrumbItem,
+  ElDropdown,
+  ElDropdownMenu,
+  ElDropdownItem,
+  ElAvatar,
 } from "element3";
 
 createApp(App)
@@ -49,4 +53,8 @@ createApp(App)
   .use(ElPagination)
   .use(ElBreadcrumb)
   .use(ElBreadcrumbItem)
+  .use(ElDropdown)
+  .use(ElDropdownMenu)
+  .use(ElDropdownItem)
+  .use(ElAvatar)
   .mount("#app");

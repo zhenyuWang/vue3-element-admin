@@ -10,6 +10,8 @@ export default [
         },
         body: {
           name: `${req.body.name}小明`,
+          avatar:
+            "https://img0.baidu.com/it/u=1570224879,3082274194&fm=253&fmt=auto&app=120&f=JPEG?w=432&h=288",
           roles: ["admin", "集团管理员"],
         },
       };

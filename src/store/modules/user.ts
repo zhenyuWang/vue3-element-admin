@@ -1,6 +1,7 @@
 import { apiLogin } from "@/api/user";
 type userInfo = {
   name: string;
+  avatar: string;
   roles: string[];
 };
 type state = {
@@ -22,6 +23,7 @@ export default {
   state: {
     userInfo: {
       name: "",
+      avatar: "",
       roles: [],
     },
   },
@@ -36,6 +38,7 @@ export default {
         apiLogin(data).then(async (res) => {
           context.commit("setUserInfo", {
             name: res.body.name,
+            avatar: res.body.avatar,
             roles: res.body.roles,
           });
           await context.dispatch("permission/handleRoutes", null, {

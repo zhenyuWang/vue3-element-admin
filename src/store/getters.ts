@@ -2,6 +2,7 @@ type state = {
   user: {
     userInfo: {
       name: string;
+      avatar: string;
       roles: string[];
     };
   };
