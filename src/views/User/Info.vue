@@ -20,7 +20,6 @@ export default {
   name: "",
   setup() {
     const userInfo = useStore().getters.userInfo;
-    console.log("userInfo", userInfo);
     return { userInfo };
   },
 };

@@ -63,6 +63,15 @@ export default {
           await context.dispatch("permission/resetRoute", null, {
             root: true,
           });
+          context.commit("tagsView/CLEAR_CACHE_VIEW", null, {
+            root: true,
+          });
+          context.commit("tagsView/CLEAR_VISITED_VIEW", null, {
+            root: true,
+          });
+          context.commit("tagsView/CLEAR_FIXED_VISITED_VIEW", null, {
+            root: true,
+          });
           resolve("success");
         });
       });

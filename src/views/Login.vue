@@ -1,5 +1,8 @@
 <template>
-  <div class="flex flex_justify_center login_main w_100 h_100">
+  <div
+    class="flex flex_justify_center login_main w_100 h_100"
+    @keyup.enter="login"
+  >
     <!-- 中间盒子 -->
     <div class="content">
       <h3 class="t_center c_fff">登录</h3>
@@ -17,9 +20,7 @@
             autocomplete
           ></el-input>
         </el-form-item>
-        <el-button class="w_100" type="primary" @click="submit()"
-          >登录</el-button
-        >
+        <el-button class="w_100" type="primary" @click="login">登录</el-button>
       </el-form>
     </div>
   </div>
@@ -58,8 +59,8 @@ export default defineComponent({
     const changeInputType = (val) => {
       passInputType.value = val;
     };
-    // 表单提交
-    const submit = () => {
+    // 登录
+    const login = () => {
       form.value.validate((valid) => {
         if (valid) {
           store.dispatch("user/login", param.param).then(() => {
@@ -76,7 +77,7 @@ export default defineComponent({
       ...toRefs(rules),
       passInputType,
       changeInputType,
-      submit,
+      login,
     };
   },
 });

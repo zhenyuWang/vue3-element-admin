@@ -25,7 +25,7 @@
       </el-submenu>
     </template>
     <el-menu-item v-else :index="item.name">
-      <router-link :to="item.fullPath">
+      <router-link :to="item">
         <i v-if="item.meta && item.meta.icon" :class="item.meta.icon"></i>
         <span>{{ (item.meta && item.meta.title) || item.name }}</span>
       </router-link>

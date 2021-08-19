@@ -2,7 +2,7 @@
   <section class="app_main flex">
     <SliderBar />
     <el-container>
-      <el-header>
+      <el-header height="80px">
         <NavBar />
       </el-header>
       <el-main>
@@ -43,6 +43,9 @@ export default defineComponent({
 <style lang="scss" scoped>
 .app_main {
   height: 100%;
+  .el-header {
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  }
 }
 /* fade-transform */
 .fade-transform-leave-active,

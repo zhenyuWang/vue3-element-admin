@@ -6,19 +6,23 @@
     </div>
     <AvatarDropDown />
   </div>
+  <VisitedViews />
 </template>
 <script>
 import { defineComponent } from "vue";
 import Collapse from "./Collapse.vue";
 import Breadcrumb from "./Breadcrumb.vue";
 import AvatarDropDown from "./AvatarDropDown.vue";
+import VisitedViews from "./VisitedViews.vue";
 export default defineComponent({
   name: "",
-  components: { Collapse, Breadcrumb, AvatarDropDown },
+  components: { Collapse, Breadcrumb, AvatarDropDown, VisitedViews },
 });
 </script>
 <style lang="scss" scoped>
 .navbar {
-  height: 50px;
+  > div:first-child {
+    height: 50px;
+  }
 }
 </style>

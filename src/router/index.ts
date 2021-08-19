@@ -3,10 +3,26 @@ import store from "@/store";
 
 /* Layout */
 import Layout from "@/layout/index.vue";
-
+// modules
 import table from "./modules/table";
 import nestRoute from "./modules/nestRoute";
 import user from "./modules/user";
+
+/* 
+  config 
+    path                路径
+    fullPath            完整路径
+    name                唯一name 大驼峰
+    redirect            重定向(默认 '')
+    component           路由对应组件
+    hidden:true         是否在左侧菜单隐藏(默认 false)
+    meta                
+      title             名称 (默认 '')
+      icon              左侧菜单icon (默认 '')
+      notNeedAuth:true  该路由是否不需要鉴权(默认 false)
+      needCache:true    该路由是否需要缓存(默认 false)
+      fixed:true        如果设置为true，该路由会固定在visited-view中(默认 false)
+*/
 // 无需权限的路由
 export const routes = [
   {
@@ -29,16 +45,19 @@ export const routes = [
 export const permissionRoutes = [
   {
     path: "/",
-    fullPath: "/",
     name: "Root",
     component: Layout,
     redirect: "/home",
     children: [
       {
         path: "home",
-        fullPath: "/home",
         name: "Home",
-        meta: { title: "首页", icon: "el-icon-s-home", needCache: true },
+        meta: {
+          title: "首页",
+          icon: "el-icon-s-home",
+          needCache: true,
+          fixed: true,
+        },
         component: () => import("@/views/Home.vue"),
       },
     ],
@@ -63,8 +82,6 @@ const router = createRouter({
   },
 });
 
-// removeRoute https://next.router.vuejs.org/zh/api/#removeroute
-// router.addRoute  https://router.vuejs.org/zh/api/#router-addroutes
 // 路由前置守卫
 router.beforeEach((to) => {
   /* 
@@ -84,11 +101,15 @@ router.beforeEach((to) => {
     }
   }
 });
-// 这里可以收集用户路由历史信息
+// 路由后置守卫
 router.afterEach((to: any) => {
+  // 添加路由缓存
   if (to.name && to.meta.needCache) {
-    store.commit("tagsView/ADD_VIEW", to.name);
+    store.commit("tagsView/ADD_CACHE_VIEW", to.name);
   }
+  // 添加访问过路由
+  if (to.meta && !to.meta.notNeedAuth)
+    store.commit("tagsView/ADD_VISITED_VIEW", to);
 });
 
 export default router;

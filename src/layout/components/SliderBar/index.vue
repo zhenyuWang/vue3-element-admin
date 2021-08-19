@@ -2,7 +2,7 @@
   <el-aside :class="{ collapse: isCollapse }">
     <Logo />
     <el-menu :default-active="activeMenu" :collapse="isCollapse">
-      <template v-for="item in routes" :key="item.fullPath">
+      <template v-for="item in routes" :key="item.path">
         <SlideBarItem :item="item" />
       </template>
     </el-menu>

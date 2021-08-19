@@ -52,7 +52,6 @@ export default defineComponent({
     });
     const router = useRouter();
     const handleEdit = (item: any) => {
-      console.log(`edit ${item.id}`);
       router.push(`/table/child/list1/edit/${item.id}`);
     };
     const handleDelete = (item: any) => {

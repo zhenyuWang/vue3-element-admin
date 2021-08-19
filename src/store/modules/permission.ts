@@ -1,4 +1,5 @@
 import router, { routes, permissionRoutes } from "@/router";
+import store from "@/store";
 type routes = any[];
 type state = {
   routes: routes;
@@ -10,6 +11,15 @@ type context = {
   actions: Record<string, unknown>;
   commit: any;
 };
+function handleFixedVisitedViews(context: context, routes: any[]) {
+  routes.forEach((route) => {
+    if (route.meta && route.meta.fixed) {
+      store.dispatch("tagsView/addFixedVisitedView", route);
+    }
+    if (route.children && route.children.length)
+      handleFixedVisitedViews(context, route.children);
+  });
+}
 export default {
   namespaced: true,
   state: {
@@ -27,6 +37,7 @@ export default {
       permissionRoutes.forEach((item) => {
         router.addRoute(item);
       });
+      handleFixedVisitedViews(context, permissionRoutes);
       context.commit("setRoutes", permissionRoutes);
     },
     resetRoute(context: context) {
