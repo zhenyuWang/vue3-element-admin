@@ -1,6 +1,7 @@
-import { apiLogin } from "@/api/user";
+import { apiLogin, apiSignout } from "@/api/user";
 type userInfo = {
   name: string;
+  token: string;
   avatar: string;
   roles: string[];
 };
@@ -23,6 +24,7 @@ export default {
   state: {
     userInfo: {
       name: "",
+      token: "",
       avatar: "",
       roles: [],
     },
@@ -38,10 +40,27 @@ export default {
         apiLogin(data).then(async (res) => {
           context.commit("setUserInfo", {
             name: res.body.name,
+            token: res.body.token,
             avatar: res.body.avatar,
             roles: res.body.roles,
           });
           await context.dispatch("permission/handleRoutes", null, {
+            root: true,
+          });
+          resolve("success");
+        });
+      });
+    },
+    signout(context: context) {
+      return new Promise((resolve) => {
+        apiSignout().then(async (res) => {
+          context.commit("setUserInfo", {
+            name: "",
+            token: "",
+            avatar: "",
+            roles: [],
+          });
+          await context.dispatch("permission/resetRoute", null, {
             root: true,
           });
           resolve("success");

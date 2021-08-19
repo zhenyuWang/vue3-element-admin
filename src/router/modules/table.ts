@@ -4,6 +4,7 @@ export default {
   fullPath: "/table",
   name: "Table",
   meta: { title: "表格", icon: "el-icon-s-data" },
+  redirect: "/table/child/list1",
   component: Layout,
   children: [
     {

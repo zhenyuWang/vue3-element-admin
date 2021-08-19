@@ -30,14 +30,7 @@
 </template>
 
 <script lang="ts">
-import {
-  defineComponent,
-  reactive,
-  ref,
-  onMounted,
-  onActivated,
-  onDeactivated,
-} from "vue";
+import { defineComponent, reactive, ref, onMounted } from "vue";
 import { apiList2 } from "@/api/table.ts";
 import { ElLoading } from "element3";
 export default defineComponent({
@@ -66,22 +59,15 @@ export default defineComponent({
         loading.close();
       });
     };
+    onMounted(() => {
+      getList();
+    });
     const handleDelete = (item: any) => {
       console.log(`del ${item.id}`);
     };
     const getIndex = (index: number) => {
       return (param.pageNo - 1) * param.pageSize + index + 1;
     };
-    onMounted(() => {
-      getList();
-      console.log("List2 onMounted");
-    });
-    onActivated(() => {
-      console.log("List2 onActivated");
-    });
-    onDeactivated(() => {
-      console.log("List2 onDeactivated");
-    });
     return {
       list,
       param,

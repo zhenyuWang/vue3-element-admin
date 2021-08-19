@@ -4,17 +4,28 @@
       <el-avatar shape="square" :size="36" :src="avatar"></el-avatar>
     </span>
     <el-dropdown-menu>
-      <el-dropdown-item>个人中心</el-dropdown-item>
-      <el-dropdown-item>退出登录</el-dropdown-item>
+      <el-dropdown-item @click="goUserInfo">个人中心</el-dropdown-item>
+      <el-dropdown-item @click="signout">退出登录</el-dropdown-item>
     </el-dropdown-menu>
   </el-dropdown>
 </template>
 <script lang="ts">
 import { useStore } from "vuex";
+import { useRouter } from "vue-router";
 export default {
   name: "",
   setup() {
-    return {};
+    const store = useStore();
+    const router = useRouter();
+    const goUserInfo = () => {
+      router.push({ name: "UserInfo" });
+    };
+    const signout = () => {
+      store.dispatch("user/signout").then(() => {
+        router.push({ name: "Login" });
+      });
+    };
+    return { goUserInfo, signout };
   },
   computed: {
     avatar() {

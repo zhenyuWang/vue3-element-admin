@@ -21,7 +21,7 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, reactive, onMounted } from "vue";
+import { defineComponent, reactive } from "vue";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
 import HelloWorld from "@/components/HelloWorld.vue";
@@ -38,9 +38,6 @@ export default defineComponent({
     const goLogin = () => {
       router.push({ name: "Login" });
     };
-    onMounted(() => {
-      console.log("home onMounted");
-    });
     return { avatar, userInfo, goLogin };
   },
 });

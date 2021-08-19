@@ -6,6 +6,7 @@ import Layout from "@/layout/index.vue";
 
 import table from "./modules/table";
 import nestRoute from "./modules/nestRoute";
+import user from "./modules/user";
 // 无需权限的路由
 export const routes = [
   {
@@ -44,6 +45,7 @@ export const permissionRoutes = [
   },
   table,
   nestRoute,
+  user,
   {
     path: "/:catchAll(.*)",
     hidden: true,

@@ -4,6 +4,7 @@ export default {
   fullPath: "/nest-route",
   name: "NestRoute",
   meta: { title: "多级嵌套", icon: "el-icon-s-grid" },
+  redirect: "/nest-route/child1/grandson/template1",
   component: Layout,
   children: [
     {

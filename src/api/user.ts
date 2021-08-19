@@ -23,7 +23,7 @@ type Method =
 const curryRequest = (
   url: string,
   method: Method,
-  data: Record<string, unknown>
+  data?: Record<string, unknown> | any
 ) => {
   return request(`/module/user/${url}`, method, data);
 };
@@ -33,4 +33,8 @@ export function apiLogin(data: {
   password: string;
 }): PromiseLike<any> {
   return curryRequest("login", "post", data);
+}
+// 退出登录
+export function apiSignout(): PromiseLike<any> {
+  return curryRequest("signout", "post");
 }

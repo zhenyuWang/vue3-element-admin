@@ -20,13 +20,7 @@
 </template>
 
 <script lang="ts">
-import {
-  defineComponent,
-  reactive,
-  onMounted,
-  onActivated,
-  onDeactivated,
-} from "vue";
+import { defineComponent, reactive, onMounted } from "vue";
 import { useRouter } from "vue-router";
 import { apiList1 } from "@/api/table.ts";
 import { ElLoading } from "element3";
@@ -53,6 +47,9 @@ export default defineComponent({
         loading.close();
       });
     };
+    onMounted(() => {
+      getList();
+    });
     const router = useRouter();
     const handleEdit = (item: any) => {
       console.log(`edit ${item.id}`);
@@ -61,17 +58,6 @@ export default defineComponent({
     const handleDelete = (item: any) => {
       console.log(`del ${item.id}`);
     };
-
-    onMounted(() => {
-      console.log("List1 onMounted");
-      getList();
-    });
-    onActivated(() => {
-      console.log("List1 onActivated");
-    });
-    onDeactivated(() => {
-      console.log("List1 onDeactivated");
-    });
     return {
       list,
       param,

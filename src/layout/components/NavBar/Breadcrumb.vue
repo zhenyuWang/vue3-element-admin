@@ -20,7 +20,6 @@ export default {
   },
   computed: {
     titleList() {
-      console.log("useRoute", useRoute().matched);
       return useRoute().matched;
     },
   },

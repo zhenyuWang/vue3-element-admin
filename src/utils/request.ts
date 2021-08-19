@@ -1,3 +1,4 @@
+import store from "@/store";
 import axios from "axios";
 import { Message } from "element3";
 // 创建axios实例
@@ -9,6 +10,8 @@ const service = axios.create({
 // 请求拦截器
 service.interceptors.request.use(
   (config) => {
+    const token = store.getters.userInfo.token;
+    if (token) config.headers["X-Token"] = token;
     return config;
   },
   (error) => {

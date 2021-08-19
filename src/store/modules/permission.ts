@@ -29,5 +29,11 @@ export default {
       });
       context.commit("setRoutes", permissionRoutes);
     },
+    resetRoute(context: context) {
+      permissionRoutes.forEach((item) => {
+        if (item.name) router.removeRoute(item.name);
+      });
+      context.commit("setRoutes", []);
+    },
   },
 };
