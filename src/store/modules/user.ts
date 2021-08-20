@@ -53,7 +53,7 @@ export default {
     },
     signout(context: context) {
       return new Promise((resolve) => {
-        apiSignout().then(async (res) => {
+        apiSignout().then(async () => {
           context.commit("setUserInfo", {
             name: "",
             token: "",

@@ -21,7 +21,12 @@
       class="menu bg_fff fontsize_13 pointer c_333"
     >
       <li @click="refresh">刷新</li>
-      <li @click="close">关闭</li>
+      <li
+        v-if="mouseRightView.data.meta && !mouseRightView.data.meta.fixed"
+        @click="close"
+      >
+        关闭
+      </li>
       <li @click="closeOther">关闭其他</li>
       <li @click="closeAll">关闭所有</li>
     </ul>
@@ -37,6 +42,7 @@ export default {
     const store = useStore();
     const router = useRouter();
     const route = useRoute();
+
     // 跳转目标路由
     const goTargetView = (view: any) => {
       router.push(view);
@@ -117,6 +123,7 @@ export default {
       refresh,
       close,
       closeOther,
+      mouseRightView,
       closeAll,
     };
   },

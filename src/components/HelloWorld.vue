@@ -1,16 +1,11 @@
 <template>
-  <h1>{{ msg }}</h1>
-  <ul>
-    <li v-for="item in courses" :key="item.id" class="item">
-      {{ item.name }}
-    </li>
-  </ul>
+  <h1 class="c_3477F2">{{ msg }}</h1>
   <p>{{ count }}</p>
-  <button class="plus" type="button" @click="count++">add count</button>
+  <el-button class="plus" type="primary" @click="count++"> plus </el-button>
 </template>
 
 <script lang="ts">
-import { ref, reactive } from "vue";
+import { ref } from "vue";
 export default {
   name: "HelloWorld",
   props: {
@@ -21,30 +16,13 @@ export default {
   },
   setup() {
     const count = ref(0);
-    type Course = {
-      id: number;
-      name: string;
-    };
-    const courses = reactive<Course[]>([
-      { id: 1, name: "小明" },
-      { id: 2, name: "小红" },
-      { id: 3, name: "小花" },
-      { id: 3, name: "小壮" },
-    ]);
-    return { count, courses };
+    return { count };
   },
 };
 </script>
 <style lang="scss" scoped>
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  .item {
-    color: purple;
-  }
-}
 p {
+  padding: 20px 0;
   font-size: 20px;
   color: red;
 }
