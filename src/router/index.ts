@@ -6,6 +6,7 @@ import Layout from "@/layout/index.vue";
 // modules
 import table from "./modules/table";
 import nestRoute from "./modules/nestRoute";
+import compontents from "./modules/compontents";
 import user from "./modules/user";
 
 /* 
@@ -64,6 +65,7 @@ export const permissionRoutes = [
   },
   table,
   nestRoute,
+  compontents,
   user,
   {
     path: "/:catchAll(.*)",
