@@ -8,13 +8,16 @@
       <h3 class="t_center c_fff">登录</h3>
       <el-form ref="form" :model="param" :rules="rules">
         <el-form-item prop="name">
-          <i class="el-icon-user fontsize_18"></i>
-          <el-input v-model="param.name" placeholder="账号"></el-input>
+          <el-input
+            v-model="param.name"
+            prefix-icon="el-icon-user"
+            placeholder="账号"
+          ></el-input>
         </el-form-item>
         <el-form-item prop="password">
-          <i class="el-icon-lock fontsize_18"></i>
           <el-input
             v-model="param.password"
+            prefix-icon="el-icon-lock"
             placeholder="密码"
             show-password
             autocomplete
@@ -98,11 +101,7 @@ export default defineComponent({
         background-color: #283443;
         border: 1px solid #434c58;
         border-radius: 4px;
-        i {
-          color: #999898;
-        }
         .el-input {
-          width: 430px;
           padding-right: 20px;
           display: inline-block;
           :deep(input) {
@@ -111,9 +110,6 @@ export default defineComponent({
             background-color: transparent;
             border: none;
             color: #fff;
-          }
-          i {
-            font-size: 18px;
           }
         }
       }
