@@ -15,6 +15,7 @@
     "test": "npm run test-unit && npm run test-e2e-ci"
   },
   "gitHooks": {
+    "commit-msg":"node script/verify-commit-msg.js",
     "pre-commit": "lint-staged",
     "pre-push": "npm run test"
   },
