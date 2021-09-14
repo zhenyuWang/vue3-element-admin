@@ -4,6 +4,7 @@ interface setting {
 export default {
   namespaced: true,
   state: {
+    // 左侧菜单是否展开
     isCollapse: false,
   },
   mutations: {
