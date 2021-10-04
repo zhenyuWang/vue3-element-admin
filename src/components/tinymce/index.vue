@@ -10,9 +10,9 @@
 </template>
 
 <script lang="ts">
-import { ref, watch } from "vue";
+import { defineComponent, ref, watch } from "vue";
 import Editor from "@tinymce/tinymce-vue";
-export default {
+export default defineComponent({
   name: "",
   components: { Editor },
   props: {
@@ -78,5 +78,5 @@ export default {
     });
     return { content, apiKey, initConfig };
   },
-};
+});
 </script>

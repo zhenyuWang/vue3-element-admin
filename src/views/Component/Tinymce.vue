@@ -5,9 +5,9 @@
   </div>
 </template>
 <script lang="ts">
-import { ref } from "vue";
+import { defineComponent, ref } from "vue";
 import Tinymce from "@/components/tinymce/index.vue";
-export default {
+export default defineComponent({
   name: "TinymceDemo",
   components: { Tinymce },
   setup() {
@@ -19,5 +19,5 @@ export default {
       updateTinymceContent,
     };
   },
-};
+});
 </script>

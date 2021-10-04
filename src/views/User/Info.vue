@@ -15,12 +15,13 @@
   </div>
 </template>
 <script lang="ts">
+import { defineComponent } from "vue";
 import { useStore } from "vuex";
-export default {
+export default defineComponent({
   name: "",
   setup() {
     const userInfo = useStore().getters.userInfo;
     return { userInfo };
   },
-};
+});
 </script>

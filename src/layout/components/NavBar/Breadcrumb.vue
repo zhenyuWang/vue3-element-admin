@@ -12,8 +12,9 @@
   </div>
 </template>
 <script lang="ts">
+import { defineComponent } from "vue";
 import { useRoute } from "vue-router";
-export default {
+export default defineComponent({
   name: "",
   setup() {
     return {};
@@ -23,7 +24,7 @@ export default {
       return useRoute().matched;
     },
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 /* breadcrumb transition */

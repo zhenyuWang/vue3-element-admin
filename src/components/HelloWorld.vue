@@ -5,8 +5,8 @@
 </template>
 
 <script lang="ts">
-import { ref } from "vue";
-export default {
+import { defineComponent, ref } from "vue";
+export default defineComponent({
   name: "HelloWorld",
   props: {
     msg: {
@@ -18,7 +18,7 @@ export default {
     const count = ref(0);
     return { count };
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 p {

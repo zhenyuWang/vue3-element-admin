@@ -33,10 +33,10 @@
   </div>
 </template>
 <script lang="ts">
+import { defineComponent, reactive, ref } from "vue";
 import { useStore } from "vuex";
 import { useRoute, useRouter } from "vue-router";
-import { reactive, ref } from "vue";
-export default {
+export default defineComponent({
   name: "",
   setup() {
     const store = useStore();
@@ -135,7 +135,7 @@ export default {
       return useStore().getters.visitedViews;
     },
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 .visited_views {

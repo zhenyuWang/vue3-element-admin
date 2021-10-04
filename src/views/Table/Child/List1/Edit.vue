@@ -6,9 +6,9 @@
   </div>
 </template>
 <script>
+import { defineComponent, reactive } from "vue";
 import { apiItemInfo } from "@/api/table";
-import { reactive } from "vue";
-export default {
+export default defineComponent({
   name: "TableChildList1Edit",
   props: {
     id: {
@@ -33,5 +33,5 @@ export default {
       userInfo,
     };
   },
-};
+});
 </script>
