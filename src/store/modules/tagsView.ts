@@ -70,14 +70,14 @@ export default {
   },
   actions: {
     // 添加固定路由
-    addFixedVisitedView(context: context, view: any) {
-      context.commit("ADD_FIXED_VISITED_VIEW", view);
-      context.commit("ADD_VISITED_VIEW", view);
+    addFixedVisitedView({ commit }: context, view: any) {
+      commit("ADD_FIXED_VISITED_VIEW", view);
+      commit("ADD_VISITED_VIEW", view);
     },
     // 删除访问过的路由
-    deleteVisitedView(context: context, view: any) {
-      context.commit("DELETE_VISITED_VIEW", view);
-      context.commit("DELETE_CACHE_VIEW", view.name);
+    deleteVisitedView({ commit }: context, view: any) {
+      commit("DELETE_VISITED_VIEW", view);
+      commit("DELETE_CACHE_VIEW", view.name);
     },
   },
 };

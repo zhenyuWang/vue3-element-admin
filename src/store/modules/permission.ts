@@ -46,11 +46,11 @@ export default {
       context.commit("setRoutes", permissionRoutes);
     },
     // 重置路由
-    resetRoute(context: context) {
+    resetRoute({ commit }: context) {
       permissionRoutes.forEach((item) => {
         if (item.name) router.removeRoute(item.name);
       });
-      context.commit("setRoutes", []);
+      commit("setRoutes", []);
     },
   },
 };
