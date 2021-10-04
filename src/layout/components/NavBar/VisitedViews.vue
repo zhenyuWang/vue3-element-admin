@@ -64,7 +64,7 @@ export default {
     const menu = ref<any>();
     // 右键菜单是否显示
     const visible = ref(false);
-    // 切换右键是否显示
+    // 隐藏右键菜单
     const hideMenu = () => {
       visible.value = false;
     };

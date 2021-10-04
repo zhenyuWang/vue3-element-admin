@@ -35,10 +35,8 @@ export default {
     },
     // 添加固定路由
     ADD_FIXED_VISITED_VIEW(state: TagsViewState, view: any) {
-      for (let i = 0; i < state.fixedVisitedViews.length; i++) {
-        if (state.fixedVisitedViews[i].name === view.name) return;
-      }
-      state.fixedVisitedViews.push(view);
+      if (!state.fixedVisitedViews.find((item) => item.name === view.name))
+        state.fixedVisitedViews.push(view);
     },
     // 清空固定路由
     CLEAR_FIXED_VISITED_VIEW(state: TagsViewState) {
@@ -46,10 +44,8 @@ export default {
     },
     // 添加访问过的路由
     ADD_VISITED_VIEW(state: TagsViewState, view: any) {
-      for (let i = 0; i < state.visitedViews.length; i++) {
-        if (state.visitedViews[i].name === view.name) return;
-      }
-      state.visitedViews.push(view);
+      if (!state.visitedViews.find((item) => item.name === view.name))
+        state.visitedViews.push(view);
     },
     // 删除访问过的路由
     DELETE_VISITED_VIEW(state: TagsViewState, view: any) {
