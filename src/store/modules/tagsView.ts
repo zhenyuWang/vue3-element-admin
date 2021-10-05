@@ -55,12 +55,6 @@ export default {
     },
     // 删除其他访问过的路由
     DELETE_OTHER_VISITED_VIEW(state: TagsViewState, view: any) {
-      state.visitedViews.forEach((item) => {
-        if (item.name !== view.name) {
-          const index = state.cachedViews.indexOf(item.name);
-          if (index > -1) state.cachedViews.splice(index, 1);
-        }
-      });
       state.visitedViews = [...state.fixedVisitedViews, view];
     },
     // 清空访问过的路由
