@@ -110,8 +110,16 @@ router.afterEach((to: any) => {
     store.commit("tagsView/ADD_CACHE_VIEW", to.name);
   }
   // 添加访问过路由
-  if (to.meta && !to.meta.notNeedAuth)
-    store.commit("tagsView/ADD_VISITED_VIEW", to);
+  if (to.meta && !to.meta.notNeedAuth) {
+    const { fullPath, name, meta, params, query } = to;
+    store.commit("tagsView/ADD_VISITED_VIEW", {
+      fullPath,
+      name,
+      meta,
+      params,
+      query,
+    });
+  }
 });
 
 export default router;
