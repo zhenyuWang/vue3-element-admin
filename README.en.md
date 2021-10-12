@@ -1,5 +1,7 @@
 # vue3-element-admin
 
+[简体中文](./README.md) | English
+
 #### Description
 A background management system based on Vite+Vue3+Vue Router+Vuex+TS+Element3+axios+Jest+Cypress
 
