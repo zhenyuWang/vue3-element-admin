@@ -11,7 +11,7 @@
         <i
           v-if="view.meta && !view.meta.fixed"
           class="el-icon-error"
-          @click.stop="delTargetVisited(view)"
+          @click.stop="delTargetVisited(view.name)"
         ></i>
       </div>
     </template>
@@ -48,12 +48,12 @@ export default defineComponent({
       router.push(view);
     };
     // 删除已访问路由
-    const delTargetVisited = (view: any) => {
-      store.dispatch("tagsView/deleteVisitedView", view);
+    const delTargetVisited = (name: string) => {
+      store.dispatch("tagsView/deleteVisitedView", name);
       // 如果删除的是active路由，跳转访问路由最后一个
-      if (view.name === route.name) {
+      if (name === route.name) {
         const visitedViews = store.getters.visitedViews;
-        router.push(visitedViews[visitedViews.length - 1]);
+        router.push({ name: visitedViews[visitedViews.length - 1].name });
       }
     };
     // 当前右键view
@@ -91,20 +91,20 @@ export default defineComponent({
       );
       if (mouseRightView.data.name === route.name) {
         await router.push({ name: "Home" });
-        router.replace(mouseRightView.data);
+        router.replace({ name: mouseRightView.data.name });
       } else {
-        router.push(mouseRightView.data);
+        router.push({ name: mouseRightView.data.name });
       }
     };
     // 关闭右键路由
     const close = () => {
-      delTargetVisited(mouseRightView.data);
+      delTargetVisited(mouseRightView.data.name);
     };
     // 右键关闭其他
     const closeOther = () => {
       store.commit("tagsView/DELETE_OTHER_VISITED_VIEW", mouseRightView.data);
       if (mouseRightView.data.name !== route.name) {
-        router.push(mouseRightView.data);
+        router.push({ name: mouseRightView.data.name });
       }
     };
     // 右键关闭所有
@@ -112,7 +112,7 @@ export default defineComponent({
       store.commit("tagsView/CLEAR_CACHE_VIEW");
       store.commit("tagsView/CLEAR_VISITED_VIEW");
       const visitedViews = store.getters.visitedViews;
-      router.push(visitedViews[visitedViews.length - 1]);
+      router.push({ name: visitedViews[visitedViews.length - 1].name });
     };
     return {
       goTargetView,
