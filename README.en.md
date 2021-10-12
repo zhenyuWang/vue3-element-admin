@@ -1,17 +1,15 @@
 # vue3-element-admin
 
 #### Description
-vite-vue3-es6-jest-ts-unit-scss-element3-vue-router4-axios+vuex
+A background management system based on Vite+Vue3+Vue Router+Vuex+TS+Element3+axios+Jest+Cypress
 
 #### Software Architecture
-vite2-vue3-es6-jest-ts-unit-scss-element3-vue-router4-axios+vuex
+Vite+Vue3+Vue Router+Vuex+TS+Element3+axios+Jest+Cypress
 
 #### Installation
 
-yarn
+yarn  
 yarn dev
-yarn lint
-yarn test;unit
 
 #### Contribution
 

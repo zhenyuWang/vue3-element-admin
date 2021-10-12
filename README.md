@@ -1,17 +1,15 @@
 # vue3-element-admin
 
 #### Description
-vite-vue3-es6-jest-ts-unit-scss-element3-vue-router4-axios+vuex
+一个基于Vite+Vue3+Vue Router+Vuex+TS+Element3+axios+Jest+Cypress的后台管理系统
 
 #### Software Architecture
-vite2-vue3-es6-jest-ts-unit-scss-element3-vue-router4-axios+vuex
+Vite+Vue3+Vue Router+Vuex+TS+Element3+axios+Jest+Cypress
 
 #### Installation
 
-yarn
+yarn  
 yarn dev
-yarn lint
-yarn test;unit
 
 #### Contribution
 
