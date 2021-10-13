@@ -5,7 +5,6 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
 </script>
-
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
