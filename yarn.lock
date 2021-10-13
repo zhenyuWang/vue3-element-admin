@@ -39,7 +39,7 @@
   resolved "https://registry.nlark.com/@emmetio/scanner/download/@emmetio/scanner-1.0.0.tgz#065b2af6233fe7474d44823e3deb89724af42b5f"
   integrity sha1-Blsq9iM/50dNRII+PeuJckr0K18=
 
-"@vitejs/plugin-vue@^1.9.3":
+"@vitejs/plugin-vue@^1.3.0":
   version "1.9.3"
   resolved "https://registry.npmmirror.com/@vitejs/plugin-vue/download/@vitejs/plugin-vue-1.9.3.tgz#93d61893ce6c723d0209af0483ec8b91a2cd811f"
   integrity sha1-k9YYk85scj0CCa8Eg+yLkaLNgR8=
@@ -697,9 +697,9 @@ token-stream@1.0.0:
   resolved "https://registry.npm.taobao.org/token-stream/download/token-stream-1.0.0.tgz#cc200eab2613f4166d27ff9afc7ca56d49df6eb4"
   integrity sha1-zCAOqyYT9BZtJ/+a/HylbUnfbrQ=
 
-typescript@^4.4.3:
+typescript@^4.3.5:
   version "4.4.4"
-  resolved "https://registry.npmmirror.com/typescript/download/typescript-4.4.4.tgz?cache=0&sync_timestamp=1634066602386&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Ftypescript%2Fdownload%2Ftypescript-4.4.4.tgz#2cd01a1a1f160704d3101fd5a58ff0f9fcb8030c"
+  resolved "https://registry.npmmirror.com/typescript/download/typescript-4.4.4.tgz#2cd01a1a1f160704d3101fd5a58ff0f9fcb8030c"
   integrity sha1-LNAaGh8WBwTTEB/VpY/w+fy4Aww=
 
 upath@^2.0.1:
@@ -707,9 +707,9 @@ upath@^2.0.1:
   resolved "https://registry.nlark.com/upath/download/upath-2.0.1.tgz#50c73dea68d6f6b990f51d279ce6081665d61a8b"
   integrity sha1-UMc96mjW9rmQ9R0nnOYIFmXWGos=
 
-vite@^2.6.4:
+vite@^2.4.4:
   version "2.6.7"
-  resolved "https://registry.npmmirror.com/vite/download/vite-2.6.7.tgz#e15c1d8327950720b5d7c4ec3fb36a5a58ccf7cb"
+  resolved "https://registry.npmmirror.com/vite/download/vite-2.6.7.tgz?cache=0&sync_timestamp=1633966863585&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fvite%2Fdownload%2Fvite-2.6.7.tgz#e15c1d8327950720b5d7c4ec3fb36a5a58ccf7cb"
   integrity sha1-4VwdgyeVByC118TsP7NqWljM98s=
   dependencies:
     esbuild "^0.13.2"
@@ -853,14 +853,14 @@ vscode-vue-languageservice@^0.27.0:
     vscode-pug-languageservice "^0.27.24"
     vscode-typescript-languageservice "^0.27.25"
 
-vue-tsc@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.npmmirror.com/vue-tsc/download/vue-tsc-0.3.0.tgz#3b3872bf4f1d2e4409b57adbd826032e253db406"
-  integrity sha1-Ozhyv08dLkQJtXrb2CYDLiU9tAY=
+vue-tsc@^0.2.2:
+  version "0.2.3"
+  resolved "https://registry.npmmirror.com/vue-tsc/download/vue-tsc-0.2.3.tgz#12bf48e3c9b1e553d31aad0c641722d5d15841d8"
+  integrity sha1-Er9I48mx5VPTGq0MZBci1dFYQdg=
   dependencies:
     vscode-vue-languageservice "^0.27.0"
 
-vue@^3.2.16:
+vue@^3.0.5:
   version "3.2.20"
   resolved "https://registry.npmmirror.com/vue/download/vue-3.2.20.tgz?cache=0&sync_timestamp=1633712767060&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fvue%2Fdownload%2Fvue-3.2.20.tgz#940f8aa8bf3e3be78243ca582bad41fcd45ae3e6"
   integrity sha1-lA+KqL8+O+eCQ8pYK61B/NRa4+Y=
