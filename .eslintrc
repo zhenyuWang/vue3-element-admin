@@ -1,0 +1,27 @@
+{
+  // 指定当前目录为根目录
+  "root": true,
+  // 环境配置项
+  "env": {
+    // 是否浏览器环境
+    "browser": true,
+    // 是否node环境
+    "node": true,
+    // es2021 支持
+    "es2021": true
+  },
+  // 引入配置项
+  "extends": [
+    // vue3
+    "plugin:vue/vue3-recommended",
+    // eslint
+    "eslint:recommended",
+    // vue typescript
+    "@vue/typescript/recommended"
+  ],
+  // 解析器配置
+  "parserOptions": {
+    // 要使用的 ECMAScript 语法版本
+    "ecmaVersion": 2021
+  }
+}

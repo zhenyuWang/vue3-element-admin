@@ -1,7 +1,15 @@
 <template>
-  <h1 class="c_3477F2">{{ msg }}</h1>
+  <h1 class="c_3477F2">
+    {{ msg }}
+  </h1>
   <p>{{ count }}</p>
-  <button class="plus" type="primary" @click="count++"> plus </button>
+  <button
+    class="plus"
+    type="primary"
+    @click="count++"
+  >
+    plus
+  </button>
 </template>
 
 <script lang="ts">
