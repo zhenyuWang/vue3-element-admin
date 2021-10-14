@@ -1,5 +1,5 @@
 {
-  "name": "vite-vue3-ts",
+  "name": "vite-vue3-ts-jest-cypress",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
