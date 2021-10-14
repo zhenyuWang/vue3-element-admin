@@ -2,8 +2,11 @@
   <img alt="Vue logo" src="./assets/logo.png" />
   <HelloWorld msg="Hello  Vite + Vue 3 + TypeScript" />
 </template>
-<script setup lang="ts">
+<script lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
+export default {
+  components:{HelloWorld}
+}
 </script>
 <style>
 #app {
