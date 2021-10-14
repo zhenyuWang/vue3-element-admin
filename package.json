@@ -15,7 +15,8 @@
   },
   "gitHooks": {
     "commit-msg": "node scripts/verify-commit-msg.js",
-    "pre-commit": "lint-staged"
+    "pre-commit": "lint-staged",
+    "pre-push": "npm run test"
   },
   "lint-staged": {
     "*.{ts,vue}": "eslint --fix",
