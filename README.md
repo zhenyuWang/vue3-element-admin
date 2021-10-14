@@ -1,3 +1,3 @@
-# Vite + Vue 3 + Typescript
+# Vite + Vue3 + Typescript + Jest
 
-Vite + Vue 3 + Typescript 基础开发框架
+Vite + Vue3 + Typescript + Jest 基础开发框架
