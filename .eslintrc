@@ -25,5 +25,9 @@
   "parserOptions": {
     // 要使用的 ECMAScript 语法版本
     "ecmaVersion": 2021
+  },
+  // 校验规则
+  "rules": {
+    "@typescript-eslint/no-var-requires": 0
   }
 }

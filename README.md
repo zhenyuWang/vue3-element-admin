@@ -1,3 +1,3 @@
-# Vite + Vue3 + Typescript + Jest + Cypress + Eslint + Prettier
+# Vite + Vue3 + Typescript + Jest + Cypress + Eslint + Prettier + commit-msg
 
-Vite + Vue3 + Typescript + Jest + Cypress + Eslint + Prettier 基础开发框架
+Vite + Vue3 + Typescript + Jest + Cypress + Eslint + Prettier + commit-msg 基础开发框架
