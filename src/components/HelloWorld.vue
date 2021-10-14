@@ -3,13 +3,7 @@
     {{ msg }}
   </h1>
   <p>{{ count }}</p>
-  <button
-    class="plus"
-    type="primary"
-    @click="count++"
-  >
-    plus
-  </button>
+  <button class="plus" type="primary" @click="count++">plus</button>
 </template>
 
 <script lang="ts">

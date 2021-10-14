@@ -17,7 +17,9 @@
     // eslint
     "eslint:recommended",
     // vue typescript
-    "@vue/typescript/recommended"
+    "@vue/typescript/recommended",
+    "@vue/prettier",
+    "@vue/prettier/@typescript-eslint"
   ],
   // 解析器配置
   "parserOptions": {
