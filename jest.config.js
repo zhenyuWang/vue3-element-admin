@@ -7,5 +7,7 @@ module.exports = {
     "^.+\\.vue$": "vue-jest",
     // jest解析ts的时候通过ts-jest解析
     "^.+\\.tsx?$": "ts-jest"
-  }
+  },
+  // 配置测试脚本文件匹配规则
+  testMatch: ["**/tests/unit/?(*.)+(spec).[jt]s?(x)"],
 };
