@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
-    "test:unit": "jest"
+    "test-unit": "jest"
   },
   "dependencies": {
     "vue": "^3.0.5"
