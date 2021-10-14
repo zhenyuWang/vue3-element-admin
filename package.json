@@ -13,12 +13,12 @@
     "lint": "eslint --ext .ts,vue src/**",
     "lint:fix": "eslint --ext .ts,vue src/** --fix"
   },
-"gitHooks": {
-  "pre-commit": "lint-staged"
-},
-"lint-staged": {
-  "*.{ts,vue}": "eslint --fix"
-},
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{ts,vue}": "eslint --fix"
+  },
   "dependencies": {
     "vue": "^3.0.5"
   },
@@ -41,6 +41,7 @@
     "typescript": "^4.3.5",
     "vite": "^2.4.4",
     "vue-jest": "^5.0.0-alpha.10",
-    "vue-tsc": "^0.2.2"
+    "vue-tsc": "^0.2.2",
+    "yorkie": "2.0.0"
   }
 }
