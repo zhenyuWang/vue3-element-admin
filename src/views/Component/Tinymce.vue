@@ -5,15 +5,14 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent } from "vue";
 import Tinymce from "@/components/tinymce/index.vue";
 export default defineComponent({
   name: "TinymceDemo",
   components: { Tinymce },
   setup() {
-    const tinymceContent = ref("");
     const updateTinymceContent = (val: string) => {
-      tinymceContent.value = val;
+      console.log("val", val);
     };
     return {
       updateTinymceContent,

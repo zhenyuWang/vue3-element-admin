@@ -17,7 +17,8 @@
   },
   "rules": {
     "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/no-explicit-any": ["off"]
+    "@typescript-eslint/no-explicit-any": ["off"],
+    "vue/script-setup-uses-vars":["off"]
     // "prettier/prettier":[
     //   {
     //     "trailingComma":"es5"
