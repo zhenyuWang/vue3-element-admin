@@ -14,11 +14,12 @@
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-explicit-any": ["off"],
     "vue/script-setup-uses-vars": ["off"],
-    "multiline-ternary": 0
-    // "prettier/prettier":[
-    //   {
-    //     "trailingComma":"es5"
-    //   }
-    // ]
+    "multiline-ternary": 0,
+    "prettier/prettier": [
+      {
+        "printWidth": 160,
+        "trailingComma": "es5"
+      }
+    ]
   }
 }
