@@ -15,12 +15,13 @@
     "test": "npm run test-unit && npm run test-e2e-ci"
   },
   "gitHooks": {
-    "commit-msg":"node scripts/verify-commit-msg.js",
+    "commit-msg": "node scripts/verify-commit-msg.js",
     "pre-commit": "lint-staged",
     "pre-push": "npm run test"
   },
   "lint-staged": {
-    "*.{js,ts,vue}": "eslint --fix"
+    "*.{js,ts,vue}": "eslint --fix",
+    "*": "prettier -w -u"
   },
   "dependencies": {
     "@tinymce/tinymce-vue": "^4.0.4",
