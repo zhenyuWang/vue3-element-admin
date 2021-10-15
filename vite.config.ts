@@ -5,8 +5,8 @@ import { viteMockServe } from "vite-plugin-mock";
 export default ({ command, mode }: ConfigEnv): UserConfigExport => {
   const plugins = [vue()];
   const env = loadEnv(mode, process.cwd());
-  // 如果当前不是生产环境，使用添加mock插件
-  if (env.VITE_USER_NODE_ENV !== "production") {
+  // 如果当前是测试环境，使用添加mock插件
+  if (env.VITE_USER_NODE_ENV === "development") {
     plugins.push(
       viteMockServe({
         mockPath: "mock",
