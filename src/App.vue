@@ -3,7 +3,8 @@
   <HelloWorld msg="Hello  Vite + Vue 3 + TypeScript" />
 </template>
 <script lang="ts">
-import HelloWorld from "./components/HelloWorld.vue";
+// import HelloWorld from "./components/HelloWorld.vue";
+import HelloWorld from "@/components/HelloWorld.vue";
 export default {
   components: { HelloWorld },
 };
