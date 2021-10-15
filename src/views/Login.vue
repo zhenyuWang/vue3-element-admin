@@ -27,9 +27,15 @@
 </template>
 <script lang="ts">
 import { defineComponent, ref, reactive } from "vue";
+import { useStore } from "vuex";
+import { useRouter } from "vue-router";
 export default defineComponent({
   name: "Login",
   setup() {
+    // sotre实例
+    const store = useStore();
+    // 路由实例
+    const router = useRouter();
     // 表单
     const form = ref(null);
     // 请求参数
@@ -55,7 +61,9 @@ export default defineComponent({
     const login = () => {
       form.value.validate((valid: boolean) => {
         if (valid) {
-          console.log("login 校验通过!");
+          store.dispatch("user/login", param).then(() => {
+            router.push({ name: "Home" });
+          });
         } else {
           return false;
         }
@@ -72,13 +80,20 @@ export default defineComponent({
   },
 });
 </script>
-<style scoped>
+<style lang="scss" scoped>
+$bg: #364d81;
 .login_main {
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.content {
-  width: 500px;
+  background: $bg;
+  .content {
+    width: 500px;
+    .title {
+      color: #fff;
+    }
+  }
 }
 </style>

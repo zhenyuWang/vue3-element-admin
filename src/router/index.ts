@@ -16,7 +16,7 @@ export const routes = [
   },
   {
     path: "/404",
-    name: "404",
+    name: "NotFund",
     hidden: true,
     meta: { notNeedAuth: true },
     component: () => import("@/views/404.vue"),
