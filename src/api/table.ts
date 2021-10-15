@@ -20,25 +20,15 @@ type Method =
   | "LINK"
   | "unlink"
   | "UNLINK";
-const curryRequest = (
-  url: string,
-  method: Method,
-  data: Record<string, unknown>
-) => {
+const curryRequest = (url: string, method: Method, data: Record<string, unknown>) => {
   return request(`/module/table/${url}`, method, data);
 };
 // table 列表1
-export function apiList1(data: {
-  pageNo: number;
-  pageSize: number;
-}): PromiseLike<any> {
+export function apiList1(data: { pageNo: number; pageSize: number }): PromiseLike<any> {
   return curryRequest("list1", "post", data);
 }
 // table 列表2
-export function apiList2(data: {
-  pageNo: number;
-  pageSize: number;
-}): PromiseLike<any> {
+export function apiList2(data: { pageNo: number; pageSize: number }): PromiseLike<any> {
   return curryRequest("list2", "post", data);
 }
 // 获取详情

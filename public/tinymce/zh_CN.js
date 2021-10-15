@@ -75,8 +75,7 @@ window.tinymce.addI18n("zh_CN", {
   Id: "id",
   "Id should start with a letter, followed only by letters, numbers, dashes, dots, colons or underscores.":
     "id应该以字母开头，后跟字母、数字、横线、点、冒号或下划线。",
-  "You have unsaved changes are you sure you want to navigate away?":
-    "你对文档的修改尚未保存，确定离开吗？",
+  "You have unsaved changes are you sure you want to navigate away?": "你对文档的修改尚未保存，确定离开吗？",
   "Restore last draft": "恢复上次的草稿",
   "Special characters...": "特殊字符...",
   "Source code": "HTML源码",
@@ -163,8 +162,7 @@ window.tinymce.addI18n("zh_CN", {
   Anchors: "锚点",
   "Link...": "链接...",
   "Paste or type a link": "粘贴或输入链接",
-  "The URL you entered seems to be an email address. Do you want to add the required mailto: prefix?":
-    "你所填写的URL地址为邮件地址，需要加上mailto:前缀吗？",
+  "The URL you entered seems to be an email address. Do you want to add the required mailto: prefix?": "你所填写的URL地址为邮件地址，需要加上mailto:前缀吗？",
   "The URL you entered seems to be an external link. Do you want to add the required http:// prefix?":
     "你所填写的URL地址属于外部链接，需要加上http://:前缀吗？",
   "Link list": "链接列表",
@@ -267,8 +265,7 @@ window.tinymce.addI18n("zh_CN", {
   Table: "表格",
   Tools: "工具",
   "Powered by {0}": "Powered by {0}",
-  "Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help":
-    "在编辑区按ALT+F9打开菜单，按ALT+F10打开工具栏，按ALT+0查看帮助",
+  "Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help": "在编辑区按ALT+F9打开菜单，按ALT+F10打开工具栏，按ALT+0查看帮助",
   "Image title": "图片标题",
   "Border width": "边框宽度",
   "Border style": "边框样式",

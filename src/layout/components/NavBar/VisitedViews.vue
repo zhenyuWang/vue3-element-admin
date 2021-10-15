@@ -8,25 +8,12 @@
         @contextmenu.prevent="mouseRightClick(view, $event)"
       >
         {{ view.meta.title }}
-        <i
-          v-if="view.meta && !view.meta.fixed"
-          class="el-icon-error"
-          @click.stop="delTargetVisited(view.name)"
-        ></i>
+        <i v-if="view.meta && !view.meta.fixed" class="el-icon-error" @click.stop="delTargetVisited(view.name)"></i>
       </div>
     </template>
-    <ul
-      v-show="visible"
-      ref="menu"
-      class="menu bg_fff fontsize_13 pointer c_333"
-    >
+    <ul v-show="visible" ref="menu" class="menu bg_fff fontsize_13 pointer c_333">
       <li @click="refresh">刷新</li>
-      <li
-        v-if="mouseRightView.data.meta && !mouseRightView.data.meta.fixed"
-        @click="close"
-      >
-        关闭
-      </li>
+      <li v-if="mouseRightView.data.meta && !mouseRightView.data.meta.fixed" @click="close">关闭</li>
       <li @click="closeOther">关闭其他</li>
       <li @click="closeAll">关闭所有</li>
     </ul>
@@ -85,10 +72,7 @@ export default defineComponent({
     };
     // 刷新右键路由
     const refresh = async () => {
-      await store.commit(
-        "tagsView/DELETE_CACHE_VIEW",
-        mouseRightView.data.name
-      );
+      await store.commit("tagsView/DELETE_CACHE_VIEW", mouseRightView.data.name);
       if (mouseRightView.data.name === route.name) {
         await router.push({ name: "Home" });
         router.replace({ name: mouseRightView.data.name });

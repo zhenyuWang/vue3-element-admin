@@ -17,8 +17,7 @@ function handleFixedVisitedViews(context: context, routes: any[]) {
     if (route.meta && route.meta.fixed) {
       store.dispatch("tagsView/addFixedVisitedView", route);
     }
-    if (route.children && route.children.length)
-      handleFixedVisitedViews(context, route.children);
+    if (route.children && route.children.length) handleFixedVisitedViews(context, route.children);
   });
 }
 export default {

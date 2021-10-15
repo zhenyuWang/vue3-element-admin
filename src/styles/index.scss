@@ -1,6 +1,7 @@
 // 修改滚动条样式
 * {
-  margin:0;padding:0;
+  margin: 0;
+  padding: 0;
   &::-webkit-scrollbar {
     // 滚动条整体样式
     width: 6px;
@@ -19,15 +20,15 @@
   }
 }
 html,
-body,#app {
-  height:100%;
+body,
+#app {
+  height: 100%;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 body {
-  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
-    Microsoft YaHei, Arial, sans-serif;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
 }
 *,
 *:before,
@@ -70,7 +71,9 @@ li {
 .h_100 {
   height: 100%;
 }
-.bg_fff{background-color: #fff;}
+.bg_fff {
+  background-color: #fff;
+}
 .of {
   overflow: hidden;
 }
@@ -158,8 +161,8 @@ li {
 .c_fff {
   color: #fff;
 }
-.c_3477F2{
-  color:#3477F2;
+.c_3477F2 {
+  color: #3477f2;
 }
 .border_t {
   border-top: 1px solid #dedede;

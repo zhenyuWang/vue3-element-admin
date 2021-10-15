@@ -1,4 +1,4 @@
 {
-  "pluginsFile":"tests/e2e/plugins//index.ts",
-  "video":false
+  "pluginsFile": "tests/e2e/plugins//index.ts",
+  "video": false
 }
