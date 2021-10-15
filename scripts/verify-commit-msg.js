@@ -1,5 +1,5 @@
 const chalk = require("chalk");
-// 添加本行使win10 环境console变色生效
+// 添加本行使 win10系统 vscode 终端 console变色生效
 chalk.level = 1;
 const msgPath = process.env.GIT_PARAMS;
 const msg = require("fs").readFileSync(msgPath, "utf-8").trim();
