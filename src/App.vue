@@ -1,14 +1,6 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello  Vite + Vue 3 + TypeScript" />
+  <router-view></router-view>
 </template>
-<script lang="ts">
-// import HelloWorld from "./components/HelloWorld.vue";
-import HelloWorld from "@/components/HelloWorld.vue";
-export default {
-  components: { HelloWorld },
-};
-</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
