@@ -1,5 +1,5 @@
 {
-  "name": "vite-vue3-ts-jest-cypress-eslint-prettier-commit-msg-alias-vue-router",
+  "name": "vite-vue3-ts-jest-cypress-eslint-prettier-commit-msg-alias-vue-router-vuex",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -24,7 +24,8 @@
   },
   "dependencies": {
     "vue": "^3.0.5",
-    "vue-router": "^4.0.12"
+    "vue-router": "^4.0.12",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@babel/preset-env": "7.14.9",
