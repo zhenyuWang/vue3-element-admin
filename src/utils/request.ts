@@ -37,11 +37,7 @@ service.interceptors.response.use(
  * 封装接口请求方法
  * @param url 域名后需补齐的接口地址
  * @param method 接口请求方式
- * @param trModuleCode data.header下的交易模块编号
- * @param trCode data.header下的交易编号
- * @param transTime data.header下的当前时间年-月-日 时:分:秒
- * @param transNo data.header下的随机16位字符串
- * @param body data下请求数据体
+ * @param data data下请求数据体
  */
 type Method =
   | "get"
