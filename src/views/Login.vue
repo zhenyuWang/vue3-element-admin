@@ -8,7 +8,13 @@
           <el-input v-model="param.name" prefix-icon="el-icon-user" placeholder="账号"></el-input>
         </el-form-item>
         <el-form-item prop="password">
-          <el-input v-model="param.password" prefix-icon="el-icon-lock" placeholder="密码" show-password autocomplete></el-input>
+          <el-input
+            v-model="param.password"
+            prefix-icon="el-icon-lock"
+            placeholder="密码"
+            show-password
+            autocomplete
+          ></el-input>
         </el-form-item>
         <el-button class="w_100" type="primary" @click="login">登录</el-button>
       </el-form>
