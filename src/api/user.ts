@@ -20,11 +20,18 @@ type Method =
   | "LINK"
   | "unlink"
   | "UNLINK";
-const curryRequest = (url: string, method: Method, data?: Record<string, unknown> | any) => {
+const curryRequest = (
+  url: string,
+  method: Method,
+  data?: Record<string, unknown> | any
+) => {
   return request(`/module/user/${url}`, method, data);
 };
 // 登录
-export function apiLogin(data: { name: string; password: string }): PromiseLike<any> {
+export function apiLogin(data: {
+  name: string;
+  password: string;
+}): PromiseLike<any> {
   return curryRequest("login", "post", data);
 }
 // 退出登录

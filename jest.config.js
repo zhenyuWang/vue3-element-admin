@@ -9,5 +9,10 @@ module.exports = {
     "^@/(.*)$": "<rootDir>/src/$1",
   },
   collectCoverage: true,
-  collectCoverageFrom: ["src/**/*.{js,ts,vue}", "!**/node_modules/**", "!**/shims-vue.d.ts", "!**/vite-env.d.ts"],
+  collectCoverageFrom: [
+    "src/**/*.{js,ts,vue}",
+    "!**/node_modules/**",
+    "!**/shims-vue.d.ts",
+    "!**/vite-env.d.ts",
+  ],
 };

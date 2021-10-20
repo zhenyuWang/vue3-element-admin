@@ -1,11 +1,18 @@
 <template>
-  <div class="flex flex_justify_center login_main w_100 h_100" @keyup.enter="login">
+  <div
+    class="flex flex_justify_center login_main w_100 h_100"
+    @keyup.enter="login"
+  >
     <!-- 中间盒子 -->
     <div class="content">
       <h3 class="t_center c_fff">登录</h3>
       <el-form ref="form" :model="param" :rules="rules">
         <el-form-item prop="name">
-          <el-input v-model="param.name" prefix-icon="el-icon-user" placeholder="账号"></el-input>
+          <el-input
+            v-model="param.name"
+            prefix-icon="el-icon-user"
+            placeholder="账号"
+          ></el-input>
         </el-form-item>
         <el-form-item prop="password">
           <el-input

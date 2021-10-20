@@ -1,7 +1,9 @@
 <template>
   <div class="box t_center">
     <img src="@/assets/img/avatar.jpg" alt="" />
-    <HelloWorld msg="Vite2 + Vue3 + Element3 + TS + SASS + jest + cypress buy wzy!" />
+    <HelloWorld
+      msg="Vite2 + Vue3 + Element3 + TS + SASS + jest + cypress buy wzy!"
+    />
   </div>
 </template>
 <script lang="ts">

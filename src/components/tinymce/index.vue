@@ -1,6 +1,11 @@
 <template>
   <div>
-    <Editor v-model="content" :disabled="disabled" :api-key="apiKey" :init="initConfig" />
+    <Editor
+      v-model="content"
+      :disabled="disabled"
+      :api-key="apiKey"
+      :init="initConfig"
+    />
   </div>
 </template>
 

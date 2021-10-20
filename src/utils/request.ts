@@ -60,7 +60,11 @@ type Method =
   | "LINK"
   | "unlink"
   | "UNLINK";
-const request = (url: string, method: Method, data: Record<string, unknown>) => {
+const request = (
+  url: string,
+  method: Method,
+  data: Record<string, unknown>
+) => {
   return service({
     url,
     method,

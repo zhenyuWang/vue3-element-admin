@@ -15,13 +15,16 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
     );
   }
   // 处理使用import.meta.env jest 测试报错问题
-  const envWithProcessPrefix = Object.entries(env).reduce((prev, [key, val]) => {
-    return {
-      ...prev,
-      // 环境变量添加process.env
-      ["process.env." + key]: `"${val}"`,
-    };
-  }, {});
+  const envWithProcessPrefix = Object.entries(env).reduce(
+    (prev, [key, val]) => {
+      return {
+        ...prev,
+        // 环境变量添加process.env
+        ["process.env." + key]: `"${val}"`,
+      };
+    },
+    {}
+  );
   return {
     base: "./",
     server: {

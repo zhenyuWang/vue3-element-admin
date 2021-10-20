@@ -75,7 +75,8 @@ window.tinymce.addI18n("zh_CN", {
   Id: "id",
   "Id should start with a letter, followed only by letters, numbers, dashes, dots, colons or underscores.":
     "id应该以字母开头，后跟字母、数字、横线、点、冒号或下划线。",
-  "You have unsaved changes are you sure you want to navigate away?": "你对文档的修改尚未保存，确定离开吗？",
+  "You have unsaved changes are you sure you want to navigate away?":
+    "你对文档的修改尚未保存，确定离开吗？",
   "Restore last draft": "恢复上次的草稿",
   "Special characters...": "特殊字符...",
   "Source code": "HTML源码",
