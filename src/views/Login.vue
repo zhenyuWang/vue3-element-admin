@@ -87,7 +87,7 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 .login_main {
-  background-color: #314050;
+  background-color: #2d3a4b;
   .content {
     width: 460px;
     margin-top: 200px;
