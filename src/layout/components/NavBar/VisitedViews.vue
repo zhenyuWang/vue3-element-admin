@@ -1,5 +1,5 @@
 <template>
-  <div class="visited_views flex flex_align_center">
+  <div class="visited_views">
     <template v-for="view in visitedViews" :key="view.name">
       <div
         class="fontsize_12 c_666 pointer"
@@ -140,10 +140,15 @@ export default defineComponent({
 <style lang="scss" scoped>
 .visited_views {
   height: 30px;
+  padding-top: 2px;
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
   > div {
     height: 24px;
     margin-right: 5px;
     padding: 0 10px;
+    display: inline-block;
     line-height: 24px;
     border: 1px solid #ccc;
     border-radius: 3px;
