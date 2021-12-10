@@ -1,6 +1,6 @@
 <template>
   <div class="box t_center">
-    <img src="@/assets/img/avatar.jpg" alt="" />
+    <img src="@/assets/img/avatar.png" alt="" />
     <HelloWorld
       msg="Vite2 + Vue3 + Element3 + TS + SASS + jest + cypress buy wzy!"
     />
@@ -25,6 +25,8 @@ export default defineComponent({
   > img {
     width: 100px;
     height: auto;
+    margin-bottom: 20px;
+    border-radius: 50%;
   }
 }
 </style>
